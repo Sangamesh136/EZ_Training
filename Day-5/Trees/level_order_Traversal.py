@@ -5,23 +5,44 @@ class TreeNode:
         self.right = None
         self.left = None
 
-def BFS(node):
-    queue = [node]
-    queue.append(None)
+# def BFS(node):
+#     queue = [node]
+#     queue.append(None)
     
-    while len(queue)> 0:
-        current = queue.pop(0)
-        if current == None:
-            if len(queue) == 0:
-                break
-            print()
-            queue.append(None)
-        else:
-            print(current.value, end = " ")
-            if current.left != None:
-                 queue.append(current.left)
-            if current.right != None:
-                queue.append(current.right)
+#     while len(queue)> 0:
+#         current = queue.pop(0)
+#         if current == None:
+#             if len(queue) == 0:
+#                 break
+#             print()
+#             queue.append(None)
+#         else:
+#             print(current.value, end = " ")
+#             if current.left != None:
+#                  queue.append(current.left)
+#             if current.right != None:
+#                 queue.append(current.right)
+
+
+def BFS(node):
+    lst = []
+    if node == None:
+        return lst
+    queue = []
+    queue.append(node)
+    while len(queue) >0:
+        inner_lst = []
+        lvl_size = len(queue)
+        for i in range(lvl_size):
+            current_node = queue.pop(0)
+            inner_lst.append(current_node.value)
+            if current_node.left != None:
+                queue.append(current_node.left)
+            if current_node.right != None:
+                queue.append(current_node.right)
+            
+        lst.append(inner_lst)
+    return lst
 
 if __name__ == '__main__':
     node = TreeNode(1)
@@ -39,4 +60,4 @@ if __name__ == '__main__':
     node.right.right.right = TreeNode(10)
     node.left.right.left.left = TreeNode(11)
     node.left.right.left.right = TreeNode(12)
-    BFS(node)
+    print(BFS(node))

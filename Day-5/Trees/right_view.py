@@ -1,29 +1,27 @@
-
 class TreeNode:
-    def __init__(self,value):
+    def __init__(self, value):
         self.value = value
         self.right = None
         self.left = None
 
+
 def rightView(node):
+    if node == None:
+        return
     queue = [node]
-    queue.append(None)
-    print(node.value)
-    while len(queue)> 0:
-        current = queue.pop(0)
-        
-        if current == None:
-            if len(queue) == 0:
-                break
-            else:
-                print(queue[0].value)
-                queue.append(None)
-        else:
-            # print(current.value, end = " ")
-            # if current.left != None:
-            #      queue.append(current.left)
+    while queue:
+        current_level = len(queue)
+        for i in range(current_level):
+            current = queue.pop(0)
+            if i == current_level - 1:
+                print(current.value, end=" ")
+
+            if current.left != None:
+                queue.append(current.left)
+
             if current.right != None:
                 queue.append(current.right)
+
 
 if __name__ == '__main__':
     node = TreeNode(1)
