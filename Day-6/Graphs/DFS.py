@@ -1,24 +1,44 @@
+#
+# def DFS_helper(graph_dict, visited, element, stack):
+#
+#     if visited[element] == False:
+#         stack.append(element)
+#         visited[element] = True
+#
+#     else:
+#         return
+#     for i in graph_dict[element]:
+#         DFS_helper(graph_dict, visited, i[1], stack)
+#     print(stack.pop(), end= " ")
+#
+# def DFS(graph_dict):
+#
+#     visited = {}
+#     for i in graph_dict.keys():
+#         visited[i] = False
+#     stack = []
+#     element = graph_dict[1]
+#     DFS_helper(graph_dict, visited, 1, stack)
 
-def DFS_helper(graph_dict, visited, element, stack):
 
-    if visited[element] == False:
-        stack.append(element)
-        visited[element] = True
-
+def DFS_helper(graph_dict, visitors, e, stack):
+    if visitors[e] == False:
+        stack.append(e)
+        visitors[e] = True
     else:
         return
-    for i in graph_dict[element]:
-        DFS_helper(graph_dict, visited, i[1], stack)
-    print(stack.pop(), end= " ")
+    for i in graph_dict[e]:
+        DFS_helper(graph_dict, visitors, i[1], stack)
+    print(stack.pop(), end="")
+
 
 def DFS(graph_dict):
-
-    visited = {}
-    for i in graph_dict.keys():
-        visited[i] = False
+    visitors = {}
     stack = []
-    element = graph_dict[1]
-    DFS_helper(graph_dict, visited, 1, stack)
+    for i in range(1, len(graph_dict) + 1):
+        visitors[i] = False
+    DFS_helper(graph_dict, visitors, 1, stack)
+
 
 graph_dict = {
     1: [(1, 2, 0), (1, 3, 0)],
