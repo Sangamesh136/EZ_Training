@@ -12,7 +12,7 @@ j = 0
 while i <= len(greed):
     if greed[j] <= cookies[i]:
         j += 1
-        count +=1
+        count += 1
     i += 1
 
 print(count)

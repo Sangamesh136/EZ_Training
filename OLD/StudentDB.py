@@ -13,7 +13,7 @@ class Student:
             marks = int(input("Enter marks of a subject: "))
             self.__Marks.append(marks)
     def get_percentage(self):
-        self.__Percentage = ( sum(self.__Marks) / len(self.__Marks) / 100 ) * 100
+        self.__Percentage = (sum(self.__Marks) / len(self.__Marks) / 100) * 100
         return self.__Percentage
     def get_grade(self):
         percnt = self.get_percentage()
