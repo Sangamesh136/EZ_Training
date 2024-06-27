@@ -26,12 +26,12 @@
 
 def adjecency_matrix(n,edges):
     matrix = [[0]*n for _ in range(n)]
-    for start, end in edges:
-        matrix[start][end] = 1
-        matrix[end][start] = 1
+    for start, end, val in edges:
+        matrix[start][end] = val
+        # matrix[end][start] = 1
     return matrix
 n = 5
-edges = [(0,1), (1, 2), (2,3), (3, 4)]
-matrix = adjecency_matrix(n,edges)
+edges = [(0, 1, 9), (1, 2,6), (2, 3, 0), (3, 4,10)]
+matrix = adjecency_matrix(n, edges)
 for items in matrix:
     print(items)
