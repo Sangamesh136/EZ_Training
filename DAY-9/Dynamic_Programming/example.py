@@ -13,8 +13,8 @@ def tabulation(n):
     return dp[n]
 
 
-n = 10
-memo = memoisation(n)
+n = 50
+# memo = memoisation(n)
 tabu = tabulation(n)
-print(memo)
+# print(memo)
 print(tabu)
