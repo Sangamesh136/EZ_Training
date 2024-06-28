@@ -1,6 +1,6 @@
 #  Kraden's Algorithm
 
-lst = [4, -1, -3, 6, -2, -1, 3, 2, -8, -2]
+lst = [1, 2, 3, -2, 5]
 summ = 0
 maxi = 0
 for i in range(len(lst)):
