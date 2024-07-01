@@ -1,4 +1,4 @@
-from Stack import Stack
+from advance.stacks.Stack import Stack
 def findMax(workers, worker, i):
     for i in range(i, len(workers)):
         if workers[i] > worker:

@@ -1,4 +1,4 @@
-from Stack import Stack
+from advance.stacks.Stack import Stack
 # Approach 1
 def isValid(exp):
     stack = Stack()
