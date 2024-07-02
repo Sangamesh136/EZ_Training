@@ -31,3 +31,4 @@ root = Node(lst[0])
 for i in range(1, len(lst)):
     insert(root, lst[i])
 inOrder(root)
+
